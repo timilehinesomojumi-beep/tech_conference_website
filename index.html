@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- NAVBAR -->
+ 
   <nav>
     <div class="logo">TechConf 2026</div>
     <div class="nav-links">
@@ -17,8 +16,7 @@
       <a href="#" onclick="showPage('register')">Register</a>
     </div>
   </nav>
-
-  <!-- PAGE 1: HOME -->
+ 
   <div id="home" class="page active">
     <div class="hero">
       <h1>Welcome to <span>TechConf 2026</span></h1>
@@ -27,6 +25,7 @@
       <div class="hero-btns">
         <button onclick="showPage('register')">Register Now</button>
         <button class="outline" onclick="showPage('schedule')">View Schedule</button>
+        <a href="https://google.com" target="_blank" class="calendar-btn" style="display:inline-block; margin-left:10px; text-decoration:none; padding:10px; border:1px solid #ccc; border-radius:4px; font-size:14px; background:#fff; color:#333;">📅 Add to Calendar</a>
       </div>
     </div>
 
@@ -50,7 +49,7 @@
     </div>
   </div>
 
-  <!-- PAGE 2: SCHEDULE -->
+ 
   <div id="schedule" class="page">
     <div class="page-header">
       <h1>Schedule</h1>
@@ -106,7 +105,7 @@
     </div>
   </div>
 
-  <!-- PAGE 3: REGISTER -->
+ 
   <div id="register" class="page">
     <div class="page-header">
       <h1>Register</h1>
@@ -119,6 +118,9 @@
 
       <label>Email Address</label>
       <input type="email" id="email" placeholder="jane@example.com" required />
+
+      <label>Where are you joining us from?</label>
+      <input type="text" id="location" placeholder="e.g., San Francisco, CA" required />
 
       <label>Ticket Type</label>
       <select id="ticket">
@@ -134,8 +136,7 @@
       ✅ You're registered! See you in San Francisco.
     </div>
   </div>
-
-  <!-- MODAL -->
+ 
   <div id="modal" class="modal-overlay" onclick="closeModal()">
     <div class="modal-box" onclick="event.stopPropagation()">
       <button class="close-btn" onclick="closeModal()">✕</button>
@@ -144,6 +145,11 @@
       <p id="modal-desc"></p>
     </div>
   </div>
+
+ 
+  <footer>
+    <p>&copy; 2026 TechConf. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
