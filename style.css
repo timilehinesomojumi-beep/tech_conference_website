@@ -106,6 +106,7 @@ nav .nav-links a:hover {
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 4px;
+  cursor: pointer;
 }
 
 .stat {
@@ -114,6 +115,10 @@ nav .nav-links a:hover {
   border-radius: 8px;
   padding: 24px 10px;
   text-align: center;
+  transition: transform 0.6s;
+}
+.stat:hover{
+  transform: translateY(-10px);
 }
 
 .stat h2 {
