@@ -249,3 +249,59 @@ footer{
   padding:20px;
   color:#888;
 }
+/* SCHEDULE */
+#schedule {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.day-group {
+  margin-bottom: 40px;
+}
+
+.day-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1f3a5f;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dde3ec;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  border-color: #1f3a5f;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.tag {
+  background: #e8f0fe;
+  color: #1f3a5f;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.card h4 {
+  margin: 8px 0 6px;
+  font-size: 1rem;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.88rem;
+}
