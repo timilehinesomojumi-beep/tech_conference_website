@@ -1,156 +1,55 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TechConf 2026</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSynapse '26</title>
+    <link rel="stylesheet" href="Tech2.css">
 </head>
 <body>
- 
-  <nav>
-    <div class="logo">TechConf 2026</div>
-    <div class="nav-links">
-      <a href="#" onclick="showPage('home')">Home</a>
-      <a href="#" onclick="showPage('schedule')">Schedule</a>
-      <a href="#" onclick="showPage('register')">Register</a>
-    </div>
-  </nav>
- 
-  <div id="home" class="page active">
-    <div class="hero">
-      <h1>Welcome to <span>TechConf 2026</span></h1>
-      <p>June 20–22 · San Francisco</p>
-      <p>Three days of talks, workshops, and networking with the best in tech.</p>
-      <div class="hero-btns">
-        <button onclick="showPage('register')">Register Now</button>
-        <button class="outline" onclick="showPage('schedule')">View Schedule</button>
-        <a href="https://google.com" target="_blank" class="calendar-btn" style="display:inline-block; margin-left:10px; text-decoration:none; padding:10px; border:1px solid #ccc; border-radius:4px; font-size:14px; background:#fff; color:#333;">📅 Add to Calendar</a>
-      </div>
-    </div>
 
-    <div class="stats">
-      <div class="stat">
-        <h2>30+</h2>
-        <p>Speakers</p>
-      </div>
-      <div class="stat">
-        <h2>3</h2>
-        <p>Days</p>
-      </div>
-      <div class="stat">
-        <h2>20+</h2>
-        <p>Sessions</p>
-      </div>
-      <div class="stat">
-        <h2>3,000+</h2>
-        <p>Attendees</p>
-      </div>
-    </div>
-  </div>
+    <header class="navbar">
+        <div class="logo">TECHSNAYPSE '26</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Schedule</a>
+            <a href="#">Speakers</a>
+            <a href="#">Workshops</a>
+        </nav>
+        <button class="btn-nav">Register Now</button>
+    </header>
 
- 
-  <div id="schedule" class="page">
-    <div class="page-header">
-      <h1>Schedule</h1>
-      <p>Click a card to see more details.</p>
-    </div>
-
-    <div class="day-group">
-      <h3 class="day-label">Day 1 — June 20</h3>
-      <div class="cards">
-        <div class="card" onclick="openModal('Opening Keynote', 'Day 1 · 9:00 AM', 'Dr. Sara Lin opens TechConf 2026 with a look at the future of AI and human collaboration.')">
-          <span class="tag">Keynote</span>
-          <h4>Opening Keynote</h4>
-          <p>Dr. Sara Lin · 9:00 AM</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TECHSYNAPSE '26</h1>
+            <p class="subtitle">INNOVATION. CONNECTIVITY. FUTURE.</p>
+            <p class="description">Join us for the premier tech conference exploring AI, Blockchain, and Future Tech.</p>
+            <button class="btn-main">Buy Tickets & Explore</button>
+            <p class="event-details">Oct 14-16, 2026 | San Francisco, CA</p>
         </div>
-        <div class="card" onclick="openModal('Web Performance', 'Day 1 · 11:00 AM', 'Marcus Bell shares how top teams serve millions of users with fast load times using modern tools.')">
-          <span class="tag">Workshop</span>
-          <h4>Web Performance</h4>
-          <p>Marcus Bell · 11:00 AM</p>
+    </section>
+
+    <section class="stats-section">
+        <h2>CONFERENCE AT A GLANCE</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>3</h3>
+                <p>Days</p>
+            </div>
+            <div class="stat-card">
+                <h3>50+</h3>
+                <p>Speakers</p>
+            </div>
+            <div class="stat-card">
+                <h3>20+</h3>
+                <p>Workshops</p>
+            </div>
+            <div class="stat-card">
+                <h3>5000+</h3>
+                <p>Attendees</p>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="day-group">
-      <h3 class="day-label">Day 2 — June 21</h3>
-      <div class="cards">
-        <div class="card" onclick="openModal('AI in Production', 'Day 2 · 10:00 AM', 'Priya Nair talks about the real challenges of deploying AI models in production environments.')">
-          <span class="tag">Talk</span>
-          <h4>AI in Production</h4>
-          <p>Priya Nair · 10:00 AM</p>
-        </div>
-        <div class="card" onclick="openModal('Design Systems', 'Day 2 · 2:00 PM', 'Tomás Vega walks through building a design system that grows with your product and team.')">
-          <span class="tag">Talk</span>
-          <h4>Design Systems</h4>
-          <p>Tomás Vega · 2:00 PM</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="day-group">
-      <h3 class="day-label">Day 3 — June 22</h3>
-      <div class="cards">
-        <div class="card" onclick="openModal('Security by Default', 'Day 3 · 10:00 AM', 'Aisha Brooks covers modern security practices you can bake into your workflow from day one.')">
-          <span class="tag">Workshop</span>
-          <h4>Security by Default</h4>
-          <p>Aisha Brooks · 10:00 AM</p>
-        </div>
-        <div class="card" onclick="openModal('Closing Panel', 'Day 3 · 4:00 PM', 'All speakers come together to reflect on the conference and share what comes next for tech.')">
-          <span class="tag">Panel</span>
-          <h4>Closing Panel</h4>
-          <p>All Speakers · 4:00 PM</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
- 
-  <div id="register" class="page">
-    <div class="page-header">
-      <h1>Register</h1>
-      <p>Secure your spot at TechConf 2026.</p>
-    </div>
-
-    <form class="reg-form" onsubmit="submitForm(event)">
-      <label>Full Name</label>
-      <input type="text" id="name" placeholder="Jane Smith" required />
-
-      <label>Email Address</label>
-      <input type="email" id="email" placeholder="jane@example.com" required />
-
-      <label>Where are you joining us from?</label>
-      <input type="text" id="location" placeholder="e.g., San Francisco, CA" required />
-
-      <label>Ticket Type</label>
-      <select id="ticket">
-        <option>General Admission</option>
-        <option>Workshop Pass</option>
-        <option>VIP All-Access</option>
-      </select>
-
-      <button type="submit">Confirm Registration</button>
-    </form>
-
-    <div id="success-msg" class="success-msg">
-      ✅ You're registered! See you in San Francisco.
-    </div>
-  </div>
- 
-  <div id="modal" class="modal-overlay" onclick="closeModal()">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <button class="close-btn" onclick="closeModal()">✕</button>
-      <h3 id="modal-title"></h3>
-      <p id="modal-time" class="modal-time"></p>
-      <p id="modal-desc"></p>
-    </div>
-  </div>
-
- 
-  <footer>
-    <p>&copy; 2026 TechConf. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
