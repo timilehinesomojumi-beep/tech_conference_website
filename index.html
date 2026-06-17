@@ -25,14 +25,6 @@
     <p>June 20–22 · San Francisco</p>
     <p>Three days of talks, workshops, and networking with the best in tech.</p>
 
-    <div class="hero-btns">
-      <button onclick="showPage('register')">Register Now</button>
-      <button class="outline" onclick="showPage('schedule')">View Schedule</button>
-      <a href="https://google.com" target="_blank" class="calendar-btn">
-        📅 Add to Calendar
-      </a>
-    </div>
-  </div>
 
   <div class="stats">
     <div class="stat"><h2>30+</h2><p>Speakers</p></div>
@@ -43,27 +35,109 @@
 </div>
 
 <!-- SCHEDULE -->
-<div id="schedule" class="page">
-  <div class="page-header">
-    <h1>Schedule</h1>
-    <p>Click a card to see more details.</p>
+  <div id="schedule" class="page">
+    <div class="page-header">
+      <h1>Schedule</h1>
+      <p>Click a card to see more details.</p>
+    </div>
+    <div class="day-group">
+      <h3 class="day-label">Day 1 — June 20</h3>
+      <div class="cards">
+        <div class="card" onclick="openModal('Opening Keynote','Day 1 · 9:00 AM','Dr. Sara Lin opens TechConf 2026 with a look at the future of AI and human collaboration.')">
+          <span class="tag">Keynote</span><h4>Opening Keynote</h4><p>Dr. Sara Lin · 9:00 AM</p>
+        </div>
+        <div class="card" onclick="openModal('Web Performance','Day 1 · 11:00 AM','Marcus Bell shares how top teams serve millions of users with fast load times using modern tools.')">
+          <span class="tag">Workshop</span><h4>Web Performance</h4><p>Marcus Bell · 11:00 AM</p>
+        </div>
+      </div>
+    </div>
+    <div class="day-group">
+      <h3 class="day-label">Day 2 — June 21</h3>
+      <div class="cards">
+        <div class="card" onclick="openModal('AI in Production','Day 2 · 10:00 AM','Priya Nair talks about the real challenges of deploying AI models in production environments.')">
+          <span class="tag">Talk</span><h4>AI in Production</h4><p>Priya Nair · 10:00 AM</p>
+        </div>
+        <div class="card" onclick="openModal('Design Systems','Day 2 · 2:00 PM','Tomás Vega walks through building a design system that grows with your product and team.')">
+          <span class="tag">Talk</span><h4>Design Systems</h4><p>Tomás Vega · 2:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="day-group">
+      <h3 class="day-label">Day 3 — June 22</h3>
+      <div class="cards">
+        <div class="card" onclick="openModal('Security by Default','Day 3 · 10:00 AM','Aisha Brooks covers modern security practices you can bake into your workflow from day one.')">
+          <span class="tag">Workshop</span><h4>Security by Default</h4><p>Aisha Brooks · 10:00 AM</p>
+        </div>
+        <div class="card" onclick="openModal('Closing Panel','Day 3 · 4:00 PM','All speakers come together to reflect on the conference and share what comes next for tech.')">
+          <span class="tag">Panel</span><h4>Closing Panel</h4><p>All Speakers · 4:00 PM</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="day-group">
-    <h3 class="day-label">Day 1 — June 20</h3>
-    <div class="cards">
-      <div class="card"
-        onclick="openModal('Opening Keynote','Day 1 · 9:00 AM','Dr. Sara Lin opens TechConf 2026 with a look at the future of AI and human collaboration.')">
-        <span class="tag">Keynote</span>
-        <h4>Opening Keynote</h4>
-        <p>Dr. Sara Lin · 9:00 AM</p>
+  <div id="speakers" class="page">
+    <div class="page-header">
+      <h1>Speakers</h1>
+      <p>Meet the people shaping the future of tech.</p>
+    </div>
+    <div class="speakers-grid">
+
+      <div class="speaker-card" onclick="openModal('Dr. Sara Lin','Keynote · Day 1, 9:00 AM','Dr. Sara Lin is a leading researcher in human-AI interaction at Stanford. Her work focuses on building AI systems that augment rather than replace human decision-making. She has published over 60 papers and advises several Fortune 500 companies on responsible AI deployment.')">
+        <div class="speaker-avatar" style="background:#e8eef5;">👩‍💼</div>
+        <div class="speaker-info">
+          <h4>Dr. Sara Lin</h4>
+          <div class="role">AI Researcher · Stanford</div>
+          <p>Human-AI interaction pioneer with 60+ papers and a track record of translating research into real-world systems.</p>
+          <span class="speaker-session">Opening Keynote</span>
+        </div>
       </div>
 
-      <div class="card"
-        onclick="openModal('Web Performance','Day 1 · 11:00 AM','Marcus Bell shares how top teams serve millions of users with fast load times using modern tools.')">
-        <span class="tag">Workshop</span>
-        <h4>Web Performance</h4>
-        <p>Marcus Bell · 11:00 AM</p>
+      <div class="speaker-card" onclick="openModal('Marcus Bell','Workshop · Day 1, 11:00 AM','Marcus Bell is a principal engineer at Vercel, where he leads performance infrastructure. He has spoken at over 20 conferences and is the author of the popular open-source toolkit SpeedKit, used by teams at Airbnb, Shopify, and GitHub.')">
+        <div class="speaker-avatar" style="background:#f0f5e8;">👨‍💻</div>
+        <div class="speaker-info">
+          <h4>Marcus Bell</h4>
+          <div class="role">Principal Engineer · Vercel</div>
+          <p>Author of SpeedKit and web performance lead behind some of the fastest sites on the internet.</p>
+          <span class="speaker-session">Web Performance</span>
+        </div>
+      </div>
+
+      <div class="speaker-card" onclick="openModal('Priya Nair','Talk · Day 2, 10:00 AM','Priya Nair leads ML Platform at Stripe, overseeing the deployment of dozens of models that power fraud detection, smart routing, and financial risk analysis at scale. She is an advocate for reproducible ML systems and co-organizes the MLOps Community meetup in San Francisco.')">
+        <div class="speaker-avatar" style="background:#f5eef0;">👩‍🔬</div>
+        <div class="speaker-info">
+          <h4>Priya Nair</h4>
+          <div class="role">ML Platform Lead · Stripe</div>
+          <p>Runs the ML infrastructure behind Stripe's fraud detection and financial risk systems.</p>
+          <span class="speaker-session">AI in Production</span>
+        </div>
+      </div>
+
+      <div class="speaker-card" onclick="openModal('Tomás Vega','Talk · Day 2, 2:00 PM','Tomás Vega is Design Systems Lead at Figma, where he stewards the component library used by thousands of design teams worldwide. Before Figma, he built the design system at Spotify that scaled across 200+ product squads.')">
+        <div class="speaker-avatar" style="background:#fdf3e7;">🧑‍🎨</div>
+        <div class="speaker-info">
+          <h4>Tomás Vega</h4>
+          <div class="role">Design Systems Lead · Figma</div>
+          <p>Architect of Figma's core component library and former design-system lead at Spotify.</p>
+          <span class="speaker-session">Design Systems</span>
+        </div>
+      </div>
+
+      <div class="speaker-card" onclick="openModal('Aisha Brooks','Workshop · Day 3, 10:00 AM','Aisha Brooks is a Staff Security Engineer at GitHub and co-author of the OWASP DevSecOps Guideline. She specializes in shifting security left — embedding threat modeling and automated scanning into the development workflow before code ships.')">
+        <div class="speaker-avatar" style="background:#eef5f0;">👩‍💻</div>
+        <div class="speaker-info">
+          <h4>Aisha Brooks</h4>
+          <div class="role">Staff Security Engineer · GitHub</div>
+          <p>Co-author of the OWASP DevSecOps Guideline and champion of security-first engineering culture.</p>
+          <span class="speaker-session">Security by Default</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+    
       </div>
     </div>
   </div>
@@ -87,6 +161,52 @@
         <div class="role">AI Researcher · Stanford</div>
         <p>Human-AI interaction pioneer with 60+ papers.</p>
         <span class="speaker-session">Opening Keynote</span>
+
+    
+
+
+      <div class="speaker-card" onclick="openModal('Marcus Bell','Workshop · Day 1, 11:00 AM','Marcus Bell is a principal engineer at Vercel, where he leads performance infrastructure. He has spoken at over 20 conferences and is the author of the popular open-source toolkit SpeedKit, used by teams at Airbnb, Shopify, and GitHub.')">
+        <div class="speaker-avatar" style="background:#f0f5e8;">👨‍💻</div>
+        <div class="speaker-info">
+          <h4>Marcus Bell</h4>
+          <div class="role">Principal Engineer · Vercel</div>
+          <p>Author of SpeedKit and web performance lead behind some of the fastest sites on the internet.</p>
+          <span class="speaker-session">Web Performance</span>
+        </div>
+      </div>
+
+      <div class="speaker-card" onclick="openModal('Priya Nair','Talk · Day 2, 10:00 AM','Priya Nair leads ML Platform at Stripe, overseeing the deployment of dozens of models that power fraud detection, smart routing, and financial risk analysis at scale. She is an advocate for reproducible ML systems and co-organizes the MLOps Community meetup in San Francisco.')">
+        <div class="speaker-avatar" style="background:#f5eef0;">👩‍🔬</div>
+        <div class="speaker-info">
+          <h4>Priya Nair</h4>
+          <div class="role">ML Platform Lead · Stripe</div>
+          <p>Runs the ML infrastructure behind Stripe's fraud detection and financial risk systems.</p>
+          <span class="speaker-session">AI in Production</span>
+        </div>
+      </div>
+
+      <div class="speaker-card" onclick="openModal('Tomás Vega','Talk · Day 2, 2:00 PM','Tomás Vega is Design Systems Lead at Figma, where he stewards the component library used by thousands of design teams worldwide. Before Figma, he built the design system at Spotify that scaled across 200+ product squads.')">
+        <div class="speaker-avatar" style="background:#fdf3e7;">🧑‍🎨</div>
+        <div class="speaker-info">
+          <h4>Tomás Vega</h4>
+          <div class="role">Design Systems Lead · Figma</div>
+          <p>Architect of Figma's core component library and former design-system lead at Spotify.</p>
+          <span class="speaker-session">Design Systems</span>
+        </div>
+      </div>
+
+      <div class="speaker-card" onclick="openModal('Aisha Brooks','Workshop · Day 3, 10:00 AM','Aisha Brooks is a Staff Security Engineer at GitHub and co-author of the OWASP DevSecOps Guideline. She specializes in shifting security left — embedding threat modeling and automated scanning into the development workflow before code ships.')">
+        <div class="speaker-avatar" style="background:#eef5f0;">👩‍💻</div>
+        <div class="speaker-info">
+          <h4>Aisha Brooks</h4>
+          <div class="role">Staff Security Engineer · GitHub</div>
+          <p>Co-author of the OWASP DevSecOps Guideline and champion of security-first engineering culture.</p>
+          <span class="speaker-session">Security by Default</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
       </div>
     </div>
   </div>
