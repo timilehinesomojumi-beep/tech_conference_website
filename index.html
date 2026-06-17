@@ -1,55 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechSynapse '26</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechConf 2026</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">TECHCONFERENCE '26</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Schedule</a>
-            <a href="#">Speakers</a>
-            <a href="#">Workshops</a>
-        </nav>
-        <button class="btn-nav">Register Now</button>
-    </header>
+<nav>
+  <div class="logo">TechConf 2026</div>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('schedule')">Schedule</a>
+    <a href="#" onclick="showPage('speakers')">Speakers</a>
+    <a href="#" onclick="showPage('register')">Register</a>
+  </div>
+</nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>TECHSYNAPSE '26</h1>
-            <p class="subtitle">INNOVATION. CONNECTIVITY. FUTURE.</p>
-            <p class="description">Join us for the premier tech conference exploring AI, Blockchain, and Future Tech.</p>
-            <button class="btn-main">Buy Tickets & Explore</button>
-            <p class="event-details">Oct 14-16, 2026 | San Francisco, CA</p>
-        </div>
-    </section>
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="hero">
+    <h1>Welcome to <span>TechConf 2026</span></h1>
+    <p>June 20–22 · San Francisco</p>
+    <p>Three days of talks, workshops, and networking with the best in tech.</p>
 
-    <section class="stats-section">
-        <h2>CONFERENCE AT A GLANCE</h2>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>3</h3>
-                <p>Days</p>
-            </div>
-            <div class="stat-card">
-                <h3>50+</h3>
-                <p>Speakers</p>
-            </div>
-            <div class="stat-card">
-                <h3>20+</h3>
-                <p>Workshops</p>
-            </div>
-            <div class="stat-card">
-                <h3>5000+</h3>
-                <p>Attendees</p>
-            </div>
-        </div>
-    </section>
+    <div class="hero-btns">
+      <button onclick="showPage('register')">Register Now</button>
+      <button class="outline" onclick="showPage('schedule')">View Schedule</button>
+      <a href="https://google.com" target="_blank" class="calendar-btn">
+        📅 Add to Calendar
+      </a>
+    </div>
+  </div>
 
+  <div class="stats">
+    <div class="stat"><h2>30+</h2><p>Speakers</p></div>
+    <div class="stat"><h2>3</h2><p>Days</p></div>
+    <div class="stat"><h2>20+</h2><p>Sessions</p></div>
+    <div class="stat"><h2>3,000+</h2><p>Attendees</p></div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div id="schedule" class="page">
+  <div class="page-header">
+    <h1>Schedule</h1>
+    <p>Click a card to see more details.</p>
+  </div>
+
+  <div class="day-group">
+    <h3 class="day-label">Day 1 — June 20</h3>
+    <div class="cards">
+      <div class="card"
+        onclick="openModal('Opening Keynote','Day 1 · 9:00 AM','Dr. Sara Lin opens TechConf 2026 with a look at the future of AI and human collaboration.')">
+        <span class="tag">Keynote</span>
+        <h4>Opening Keynote</h4>
+        <p>Dr. Sara Lin · 9:00 AM</p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('Web Performance','Day 1 · 11:00 AM','Marcus Bell shares how top teams serve millions of users with fast load times using modern tools.')">
+        <span class="tag">Workshop</span>
+        <h4>Web Performance</h4>
+        <p>Marcus Bell · 11:00 AM</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SPEAKERS -->
+<div id="speakers" class="page">
+  <div class="page-header">
+    <h1>Speakers</h1>
+    <p>Meet the people shaping the future of tech.</p>
+  </div>
+
+  <div class="speakers-grid">
+    <div class="speaker-card"
+      onclick="openModal('Dr. Sara Lin','Keynote · Day 1, 9:00 AM','AI researcher and keynote speaker.')">
+
+      <div class="speaker-avatar">👩‍💼</div>
+
+      <div class="speaker-info">
+        <h4>Dr. Sara Lin</h4>
+        <div class="role">AI Researcher · Stanford</div>
+        <p>Human-AI interaction pioneer with 60+ papers.</p>
+        <span class="speaker-session">Opening Keynote</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER -->
+<div id="register" class="page">
+  <div class="page-header">
+    <h1>Register</h1>
+    <p>Secure your spot at TechConf 2026.</p>
+  </div>
+
+  <form class="reg-form" onsubmit="submitForm(event)">
+    <label>Full Name</label>
+    <input type="text" id="name" required>
+
+    <label>Email Address</label>
+    <input type="email" id="email" required>
+
+    <label>Where are you joining us from?</label>
+    <input type="text" id="location" required>
+
+    <label>Ticket Type</label>
+    <select id="ticket">
+      <option>General Admission</option>
+      <option>Workshop Pass</option>
+      <option>VIP All-Access</option>
+    </select>
+
+    <button type="submit">Confirm Registration</button>
+  </form>
+
+  <div id="success-msg" class="success-msg">
+    ✅ You're registered! See you in San Francisco.
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal-overlay" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeModal()">✕</button>
+
+    <h3 id="modal-title"></h3>
+    <p id="modal-time" class="modal-time"></p>
+    <p id="modal-desc"></p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 TechConf. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
